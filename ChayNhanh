@@ -1,0 +1,11 @@
+local SpeedMultiplier = 19 -- Điều chỉnh tốc độ (Mặc định x2)
+
+local Player = game.Players.LocalPlayer
+local RunService = game:GetService("RunService")
+
+RunService.RenderStepped:Connect(function()
+    if Player.Character and Player.Character:FindFirstChild("Humanoid") then
+        local Humanoid = Player.Character:FindFirstChild("Humanoid")
+        Humanoid.WalkSpeed = 19 * SpeedMultiplier -- 19 là tốc độ mặc định
+    end
+end)
